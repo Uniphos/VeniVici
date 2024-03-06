@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
-import './mainGen.css'
+import './mainGen.css';
 
 function MainGen() {
     const[catImage, setCatImage] = useState(null);
@@ -9,7 +9,7 @@ function MainGen() {
     const[weight, setWeight] = useState('');
     const[origin, setOrigin] = useState('');
     const[lifeSpan, setLifeSpan] = useState('');
-
+    const[dataArray, setDataArray] = useState([]);
 
     function Image_gen() {
         let url = new URL("https://api.thecatapi.com/v1/images/search");
@@ -20,13 +20,23 @@ function MainGen() {
             .then((data) => {
                 setCatImage(data[0].url);
                 setBreed(data[0].breeds[0].name);
-                setWeight(data[0].breeds[0].weight.imperial);
+                setWeight(data[0].breeds[0].weight.imperial + ' lbs');
                 setOrigin(data[0].breeds[0].origin);
                 setLifeSpan(data[0].breeds[0].life_span);
             });
     }
-    function addListBreed() {
-        
+    function addListName() {
+        dataArray.push(breed);
+        console.log(dataArray);
+    }
+    function addListWeight() {
+        dataArray.push(weight);
+    }
+    function addListOrigin() {
+        dataArray.push(origin);
+    }
+    function addListLifeS() {
+        dataArray.push(lifeSpan);
     }
 
     return (
@@ -36,17 +46,17 @@ function MainGen() {
             <br/>
             <div className='container'>
                 <div className='item'>
-                <button onClick={addListBreed}>{breed}</button>
+                <button onClick={addListName}>{breed}</button>
                 </div>
                 <div className='item'>
-                <button>{weight} lbs</button>
+                <button onClick={addListWeight}>{weight}</button>
                 </div>
                 <div className='item'>
-                <button>{origin}</button>
+                <button onClick={addListOrigin}>{origin}</button>
                 </div>
                 <div className='item'>
-                <button>{lifeSpan}</button>
-                </div>
+                <button onClick={addListLifeS}>{lifeSpan}</button>
+                </div> 
             </div>
             <br/>
             <img src={catImage} className='cat_img' />
