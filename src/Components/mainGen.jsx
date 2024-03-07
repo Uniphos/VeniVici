@@ -26,21 +26,27 @@ function MainGen() {
             });
     }
     function addListName() {
-        dataArray.push(breed);
-        console.log(dataArray);
+        setDataArray(oldArray => [...oldArray, breed]);
     }
     function addListWeight() {
-        dataArray.push(weight);
+        setDataArray(oldArray => [...oldArray, weight]);
     }
     function addListOrigin() {
-        dataArray.push(origin);
+        setDataArray(oldArray => [...oldArray, origin]);
     }
     function addListLifeS() {
-        dataArray.push(lifeSpan);
+        setDataArray(oldArray => [...oldArray, lifeSpan]);
+    }
+
+    function fixArray(e) {
+        let tempArray = dataArray;
+        tempArray = tempArray.filter((item) => item !== e.item);
+        setDataArray([...tempArray]);
     }
 
     return (
-        <div className="catPic">
+        <div className="parent">
+            <div className='mainGen'>
             <h1>Cat Nip</h1>
             <h2>Random Cat Image Generator</h2>
             <br/>
@@ -62,6 +68,18 @@ function MainGen() {
             <img src={catImage} className='cat_img' />
             <br/> <br/>
             <button onClick={()=>Image_gen()}>click here</button>
+            </div>
+
+            <div className='banList'>
+                <h2>Ban List</h2>
+                <h3>choose what cats you wanna Ban, but why would you do that</h3>
+                <br/>
+                <div className='buttons'>
+                {dataArray.map((item, index) => (
+                    <button key={index} index={item} onClick={() => fixArray({item})}>{item}</button>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

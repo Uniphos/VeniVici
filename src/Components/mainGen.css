@@ -22,11 +22,43 @@ img {
     transition: transform 0.3s ease-in-out;
 }
 
-.catPic {
+.parent {
+    padding-left: 400px;
+    display: flex;
+    justify-content: center; /* This will center the children horizontally */
+    align-items: center; /* This will center the children vertically */
+    height: 100vh; /* This will make the parent take up the full height of the viewport */
+}
+
+.mainGen {
     width: 725px;
-    margin: 10px;
+    margin: 10px auto; /* This will center the div horizontally */
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
     background-color: grey;
+}
+
+.banList {
+    width: 350px;
+    height: 800px;
+    padding-left: 100px;
+    margin-left: auto; /* This will push the banList to the right */
+    max-height: 800px; /* Replace 500px with the maximum height you want */
+    overflow-y: auto; /* This will add a scrollbar if the content exceeds the max height */
+}
+
+.buttons {
+    width: 250px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column; /* This will make each button appear on its own row */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 50px;
+}
+
+.buttons button {
+    margin: 10px;
 }
