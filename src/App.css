@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: url(https://img.freepik.com/premium-photo/collage-cats-with-orange-eyes-black-white-cat-with-orange-eyes_983420-1649.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

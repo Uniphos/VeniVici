@@ -15,6 +15,23 @@ img {
     margin-top: 20px;
 }
 
+.container button {
+    background-color: beige;
+    margin: 10px;
+    color: black;
+    border: black 2px solid;
+}
+
+.container button:hover {
+    background-color: #ff0000;
+    border: #000000 2px solid;
+}
+
+.container button:active {
+    background-color: #7c0606;
+    border: #000000 2px solid;
+}
+
 .item {
     margin: 10px;
     padding: 10px;
@@ -31,12 +48,14 @@ img {
 }
 
 .mainGen {
-    width: 725px;
+    width: 750px;
     margin: 10px auto; /* This will center the div horizontally */
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
-    background-color: grey;
+    background-color: rgb(128, 128, 128, 0.85);
+    color : white;
+    text-shadow: 5px 5px 5px black;
 }
 
 .banList {
@@ -46,6 +65,27 @@ img {
     margin-left: auto; /* This will push the banList to the right */
     max-height: 800px; /* Replace 500px with the maximum height you want */
     overflow-y: auto; /* This will add a scrollbar if the content exceeds the max height */
+}
+
+.banList h2,h3 {
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+.banList button {
+    background-color: rgb(177, 71, 71);
+    border: rgb(114, 49, 49) 2px solid;
+}
+
+.banList button:hover {
+    background-color: #5cff71;
+    border: #035300 2px solid;
+}
+
+.banList button:active {
+    background-color: #0d911e;
+    border: #000000 2px solid;
 }
 
 .buttons {
